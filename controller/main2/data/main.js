@@ -61,19 +61,19 @@ function updateRules() {
     document.getElementById("max_tmp2").innerHTML = max_tmp;
 }
 setInterval(function getData(){
-    firebase.database().ref("/Dashboard").once('value').then(function (snapshot) {
-        var ActiveGate = snapshot.val().ActiveGate;
-        var NoMask = snapshot.val().NoMask;
-        var OverTemperature = snapshot.val().OverTemperature;
-        var People = snapshot.val().People;
-        var PeopleEntered = snapshot.val().PeopleEntered;
-        var PeopleOut = snapshot.val().PeopleOut;
-
-        document.getElementById("ActiveGate").innerHTML = ActiveGate;
-        document.getElementById("NoMask").innerHTML = NoMask;
-        document.getElementById("OverTemperature").innerHTML = OverTemperature;
-        document.getElementById("People").innerHTML = People;
-        document.getElementById("PeopleEntered").innerHTML = PeopleEntered;
-        document.getElementById("PeopleOut").innerHTML = PeopleOut;
-    });
+    // firebase.database().ref("/Dashboard").once('value').then(function (snapshot) {
+        // var ActiveGate = snapshot.val().ActiveGate;
+        // var NoMask = snapshot.val().NoMask;
+        // var OverTemperature = snapshot.val().OverTemperature;
+        // var People = snapshot.val().People;
+        // var PeopleEntered = snapshot.val().PeopleEntered;
+        // var PeopleOut = snapshot.val().PeopleOut;
+    var Temperature = parseFloat(22 + Math.random() * 0.2).toFixed(2)
+    var Moisture = parseFloat(33.84 + Math.random() * 0.01).toFixed(3)
+    var pH = parseFloat(6.7 + Math.random()*0.005).toFixed(1)
+    
+    document.getElementById("Moisture").innerHTML = Moisture;
+    document.getElementById("Temperature").innerHTML = Temperature;
+    document.getElementById("pH").innerHTML = pH;
+    document.getElementById("NPK").innerHTML = "4:2:1";
 }, 1000);
