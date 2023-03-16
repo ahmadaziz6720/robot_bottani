@@ -341,7 +341,7 @@ void onWebSocketEvent(AsyncWebSocket *server,
         std::string myData = "";
         myData.assign((char *)data, len);
         String temp = myData.c_str();
-        processCarMovement(temp.toInt());       
+        processCarMovement(temp .toInt());       
       }
       break;
     case WS_EVT_PONG:

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>apProkes</title>
+    <title>Bottani</title>
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -15,16 +15,12 @@
 
         .arrows {
             font-size:70px;
-            color:red;
-            }
-            .circularArrows {
-            font-size:80px;
-            color:blue;
+            color:rgb(2, 136, 31);
             }
             td {
-            background-color:black;
+            background-color:white;
             border-radius:25%;
-            box-shadow: 5px 5px #888888;
+            /* box-shadow: 5px 5px #888888; */
             }
             td:active {
             transform: translate(5px,5px);
@@ -39,19 +35,29 @@
                         user-select: none; /* Non-prefixed version, currently
                                             supported by Chrome and Opera */
         }
+        span{
+            display: flex;
+            justify-content: center;
+            border-color: black;
+
+        }
     </style>
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- <link rel="icon" type="image/x-icon" href="img/favicon.png"> -->
+    <!-- <link rel="icon" type="image/x-icon" href="img/favicon.png"> -->
+
 </head>
 <body onload="javascript:getData()">
     <!-- BAGIAN NAVBAR -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark " style="background-color: #063E58;">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark " style="background-color: #00B900;">
         <div class="container">
             <!-- bagian logo -->
             <a class="navbar-brand" href="#" style="margin: 0;">
                 <!-- <img src="img/logo.png" alt="apProkes" height="45"> -->
+                <img src="img/bottani.png" alt="apProkes" height="45">
+
             </a>
             <!-- tombol responsive -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,14 +91,14 @@
                         <img src="img/thumb.png" class="img-thumbnail" alt="" style="border: 0px;">
                     </div>
                     <!-- data -->
-                    <div class="col-xl-8 col-sm-8" style="color: #063E58;">
+                    <div class="col-xl-8 col-sm-8" style="color: #00B900;">
                         <h5 id="nama-p" class="fw-bold mt-3">Admin</h5>
-                        <p id="email-p" style="color: #575758;">Administrator approkes</p>
+                        <p id="email-p" style="color: #575758;">Administrator bottani</p>
                     </div>
                 </div>
 
                 <!-- navigasi -->
-                <div class="row fw-bold border rounded mt-3 py-1" style="color: #063E58;">
+                <div class="row fw-bold border rounded mt-3 py-1" style="color: #00B900;">
                     <table class="table text-blue">
                         
                         <tr>
@@ -121,15 +127,13 @@
             </div>
 
             <!-- content -->
-            <div class="col-xl-8 p-3" style="color: #063E58;">
+            <div class="col-xl-8 p-3" style="color: #00B900;">
                 <div class="border rounded mt-3 p-3">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h3>Dashboard</h3>
+                            <h3>Bottani</h3>
                         </div>
-                        <div id="edit" class="col-sm-6" align="right">
-                            <button type="button" class="btn btn-primary" onclick="hilangkan(); munculkan('form')">Edit</button>
-                        </div>
+                        
                         <hr>
                     </div>
 
@@ -141,7 +145,9 @@
                     </div>
 
                     <!-- Tampilan data real time -->
-                    <div id="realtime" class="row align-items-center">
+                    <div id="realtime" class="row align-items-center" style="margin-bottom: 110px;">
+                        <h2 style="color: rgb(3, 139, 80);text-align:center;">Real Time Data</h2>
+
                         <div id="card" class="row" style="text-align: center; margin-top: 70px; margin-bottom: 70px;">
                             <div class="col-sm-4 my-2">
                                 <div class="card">
@@ -195,7 +201,7 @@
                     </div>
                     
                     <!-- Form Rules -->
-                    <div id="controller">
+                    <div id="controller" style="margin-bottom: 70px;">
                         <!-- <h5>Insert Rules</h5>
                         <form>
                             <div class="mb-3">
@@ -210,15 +216,15 @@
                             <button type="button" class="btn btn-primary" onclick="updateRules()">Save</button>
                         </form> -->
 
-                        <h2 style="color: teal;text-align:center;">Bottani</h2>
+                        <h2 style="color: rgb(3, 139, 80);text-align:center;">Controller</h2>
                         <!-- <h2 style="color: teal;text-align:center;">Wi-Fi &#128663; Control</h2> -->
                         
                         <table id="mainTable" style="width:400px;margin:auto;table-layout:fixed" CELLSPACING=10>
-                          <tr>
+                          <!-- <tr>
                             <td><a href="/button1"><button class="arrows" >&#11017;</button></a></td>
                             <td><a href="/button2"><button class="arrows" >&#8679;</button></a></td>
                             <td><a href="/button3"><button class="arrows" >&#11016;</button></a></td>
-                          </tr>`
+                          </tr>
                           
                           <tr>
                             <td><a href="/button4"><button class="arrows" >&#8678;</button></a></td>  
@@ -230,6 +236,25 @@
                             <td><a href="/button7"><button class="arrows" >&#11019;</button></a></td>
                             <td><a href="/button8"><button class="arrows" >&#8681;</button></a></td>
                             <td><a href="/button9"><button class="arrows" >&#11018;</button ></a></td>
+                          </tr> -->
+
+                          <tr>
+                            <td><span class="arrows" >&#11017;</span></td>
+                            <td><span class="arrows" >&#8679;</span></td>
+                            <td><span class="arrows" >&#11016;</span></td>
+                          </tr>
+                          
+                          <tr>
+                            <td><span class="arrows" >&#8678;</button></td>  
+                            <td><span class="arrows" >&#9632;</button></td>   
+                            <td><span class="arrows" >&#8680;</button></td>
+                          </tr>
+                          
+                          <tr>
+                            <td><span class="arrows" >&#11019;</span></td>
+                            <td><span class="arrows" >&#8681;</span></td>
+                            <td><span class="arrows" >&#11018;</span ></td>
+                          </tr>
                         </table>
                     </div>
 
@@ -254,7 +279,7 @@
     <!-- BAGIAN FOOTER -->
     <footer class="bg-light text-center text-lg-start">
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: #063E58; color: white;">
+        <div class="text-center p-3" style="background-color: #00B900; color: white;">
             <p class="footer-heart">
                 © 2023 Hackfest | Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
               <img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"></g-emoji>
